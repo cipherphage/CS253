@@ -6,6 +6,8 @@
 
 ## Here's a fun link to some mostly unrelated magic numbers: [https://www.howtogeek.com/201059/magic-numbers-the-secret-codes-that-programmers-hide-in-your-pc/][3]
 
+## Here's another fun link: the MIME Sniffing living standard: [https://mimesniff.spec.whatwg.org/][4]
+
 ## The selected comments:
 Detecting mime types is a tricky business because we need to balance  
 compatibility concerns with security issues.  Here is a survey of how other  
@@ -267,3 +269,4 @@ represents byte 0x1F.
 [1]: https://source.chromium.org/chromium/chromium/src/+/master:net/base/mime_sniffer.cc;l=5?originalUrl=https:%2F%2Fcs.chromium.org%2Fchromium%2Fsrc%2Fnet%2Fbase%2Fmime_sniffer.cc
 [2]: https://en.wikipedia.org/wiki/List_of_file_signatures
 [3]: https://www.howtogeek.com/201059/magic-numbers-the-secret-codes-that-programmers-hide-in-your-pc/
+[4]: https://mimesniff.spec.whatwg.org/
