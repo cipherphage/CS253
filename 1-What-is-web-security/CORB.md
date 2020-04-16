@@ -16,7 +16,9 @@ JSON MIME type - `text/json`, `application/json`, or any MIME type whose subtype
 
 Note that we recommend not supporting multipart range requests for sensitive resources, because this changes the MIME type to `multipart/byteranges` and makes it harder for Chrome to protect.  Typical range requests are not a problem and are treated similarly to the `nosniff` case.
 
-In addition to the recommended cases above, Chrome will also do its best to protect responses labeled with any of the MIME types above and without a `nosniff` header, but this has limitations. Many JavaScript files on the web are unfortunately labeled using some of these MIME types, and if Chrome blocked access to them, existing websites would break. Thus, when the `nosniff` header is not present, Chrome first looks at the start of the file to try to confirm whether it is HTML, XML, or JSON, before deciding whether to protect it.  If it cannot confirm this, it allows the response to be received by the cross-site page's process. This is a best-effort approach which adds some limited protection while preserving compatibility with existing sites.  We recommend that web developers include the `nosniff` header to protect their resources, to avoid relying on this "confirmation sniffing" approach.
+In addition to the recommended cases above, Chrome will also do its best to protect responses labeled with any of the MIME types above and without a `nosniff` header, but this has limitations. Many JavaScript files on the web are unfortunately labeled using some of these MIME types, and if Chrome blocked access to them, existing websites would break. Thus, when the `nosniff` header is not present, Chrome first looks at the start of the file to try to confirm whether it is HTML, XML, or JSON, before deciding whether to protect it.  If it cannot confirm this, it allows the response to be received by the cross-site page's process. This is a best-effort approach which adds some limited protection while preserving compatibility with existing sites.  We recommend that web developers include the `nosniff` header to protect their resources, to avoid relying on this "confirmation sniffing" approach.  
+
+NOTE: Firefox just recently added support for `X-Content-Type-Options:nosniff` on page loads: [https://blog.mozilla.org/security/2020/04/07/firefox-75-will-respect-nosniff-for-page-loads/][7]
 
 ### For other resource types (e.g., PDF, ZIP, PNG):
 
@@ -67,3 +69,4 @@ If you suspect Chrome is incorrectly blocking a response and that this is disrup
 [4]:https://scotthelme.co.uk/csp-cheat-sheet/
 [5]:https://github.blog/2016-04-12-githubs-csp-journey/
 [6]:https://developers.google.com/web/updates/2018/06/feature-policy
+[7]:https://blog.mozilla.org/security/2020/04/07/firefox-75-will-respect-nosniff-for-page-loads/
