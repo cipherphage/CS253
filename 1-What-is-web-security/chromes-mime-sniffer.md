@@ -6,6 +6,8 @@
 
 ## Here's a fun link to some mostly unrelated magic numbers: [https://www.howtogeek.com/201059/magic-numbers-the-secret-codes-that-programmers-hide-in-your-pc/][3]
 
+## Relatedly, if you're on Mac OS X you can pretty-print the first 128 bytes in hex of a file with this command: `hexdump -C -n 128 <path to file>`
+
 ## Here's another fun link: the MIME Sniffing living standard: [https://mimesniff.spec.whatwg.org/][4]
 
 ## The selected comments:
